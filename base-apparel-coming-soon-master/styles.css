@@ -48,7 +48,6 @@
 }
 
 body {
-    max-width: 1400px;
     margin: 0rem auto;
     font-family: var(--ff-family);
     font-size: var(--ff-size);
@@ -220,6 +219,24 @@ p.caution {
         padding: .8rem 1rem;
     }
 
+}
+
+@media screen and (min-width:1440px){
+    main{
+        grid-template-rows: 20% auto;
+    }
+    section {
+        margin-left: 30%;
+    }
+
+    header {
+        margin: 10% 30% 0rem;
+        height: auto;
+    }
+
+    h1.heading {
+        font-size: 5rem;
+    }
 }
 
 @media screen and (min-width:1160px) {
