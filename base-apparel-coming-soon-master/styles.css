@@ -1,0 +1,242 @@
+/* =================== FONTS =================== */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/* =================== STYLES ================== */
+:root {
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-grayish-red: hsl(0, 6%, 24%);
+
+    /* gradients */
+    --gradient1: hsl(0, 0%, 100%);
+    --gradient2: hsl(0, 100%, 98%);
+    --gradient3: hsl(0, 80%, 86%);
+    --gradient4: hsl(0, 74%, 74%);
+
+    /* font */
+    --ff-size: 1rem;
+    --ff-family: "Josefin Sans", san-serif;
+}
+
+/* ==================== KEYFRAMES ===================== */
+@keyframes glowBtn {
+    0% {
+        box-shadow: 0 0 1rem -4px #c85b60;
+    }
+
+    50% {
+        box-shadow: 0 0 1.2rem 1px #c85b60;
+        padding: auto 1.5rem;
+    }
+
+    80% {
+        box-shadow: 0 0 1.35rem 1.5px #c85b60;
+    }
+
+    100% {
+        box-shadow: 0 0 1.5rem 2px #c85b60;
+        padding: auto 2rem;
+    }
+}
+
+
+/* ================= GLOBAL VALUES ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1400px;
+    margin: 0rem auto;
+    font-family: var(--ff-family);
+    font-size: var(--ff-size);
+    color: var(--Desaturated-Red);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 12px;
+    line-height: 1.1;
+}
+
+h1 span {
+    color: var(--Dark-grayish-red);
+    font-weight: 600;
+}
+
+main {
+    display: block;
+}
+
+
+/* --------------------- header ------------------------ */
+header {
+    margin: 3rem 2rem;
+}
+
+header img {
+    width: 8rem;
+}
+
+/* --------------------- picture ------------------------ */
+picture {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+}
+
+picture img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/*------------------ section ------------------------ */
+section {
+    text-align: center;
+    margin: 3rem 4.5rem;
+}
+
+/* form elements*/
+form {
+    margin: 2rem auto;
+    position: relative;
+}
+
+label.desc {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+input {
+    width: 100%;
+    margin: 1.5rem auto 0.5rem;
+    padding: .7rem 1rem;
+    background: transparent;
+    border: solid 1px #8080807d;
+    border-radius: 21px;
+    position: relative;
+}
+
+input::placeholder {
+    color: #8080807d;
+    font-family: var(--ff-family);
+}
+
+input:focus {
+    outline: none;
+}
+
+/* on error */
+.border {
+    border: 2px solid var(--Soft-Red);
+}
+
+/* on error */
+.caution-icon {
+    position: absolute;
+    bottom: 34px;
+    right: 65px;
+    visibility: hidden;
+}
+
+button {
+    padding: .9rem 1.5rem;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 0px 10px var(--gradient3);
+    position: absolute;
+    right: -2px;
+    bottom: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    animation-name: glowBtn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* on error */
+p.caution {
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--Soft-Red);
+    visibility: hidden;
+}
+
+/* to show errors */
+.show-text .caution,
+.show-text .caution-icon {
+    visibility: visible;
+}
+
+@media screen and (min-width:800px) {
+    main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10rem auto;
+        background-image: url("./images/bg-pattern-desktop.svg"), linear-gradient(135deg, var(--gradient1), var(--gradient2));
+    }
+
+    header {
+        margin: 3rem 6rem 0rem;
+        height: auto;
+    }
+
+    header img {
+        width: auto;
+    }
+
+    picture {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        margin: 0rem;
+        width: 100%;
+    }
+
+
+    section {
+        margin: 1rem 8rem 1rem 6rem;
+        text-align: left;
+    }
+
+    h1.heading {
+        font-size: 3rem;
+    }
+
+    input {
+        margin-top: 2rem;
+        padding: .8rem 1rem;
+    }
+
+}
+
+@media screen and (min-width:1160px) {
+    section {
+        margin-left: 10rem;
+    }
+
+    header {
+        margin: 3rem 10rem 0rem;
+        height: auto;
+    }
+
+    header img {
+        width: auto;
+    }
+
+    h1.heading {
+        font-size: 4rem;
+    }
+}
